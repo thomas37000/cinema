@@ -1,25 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import { IMovie } from '../MovieInterface';
+import { IMovies } from '../MovieInterface';
 import axios, { AxiosResponse } from 'axios';
-import { Card } from './Card';
+import CardMovies from './CardMovies';
 
-interface IMovies {
-  movie_results: {
-    id: number;
-    original_language: string;
-    original_title: string;
-    overview: string;
-    release_date: string;
-    poster_path?: null;
-    popularity?: number;
-    title: string;
-    video: boolean;
-    vote_average?: number;
-    vote_count?: number;
-  };
-}
-
-const Home: React.FC<IMovies> = ({ movie_results }) => {
+const Home: React.FC<IMovies> = () => {
   const [movies, setMovies] = useState<IMovies[]>([]);
 
   useEffect(() => {
@@ -39,12 +23,9 @@ const Home: React.FC<IMovies> = ({ movie_results }) => {
       <div>
         {movies.map((movie) => {
           return (
-            <ul>
-              <li key={movie.id}>{movie.title}</li>
-              <li>{movie.overview}</li>
-              <li>{movie.poster_path}</li>
-            </ul>
-            // <Card movie={...movie} />
+            <li>
+              <CardMovies movie={movie} />
+            </li>
           );
         })}
       </div>

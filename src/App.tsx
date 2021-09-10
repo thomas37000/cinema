@@ -1,15 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import Home from './components/Home';
+import React, { useState, useEffect } from 'react';
+import { IMovies } from './MovieInterface';
+import axios, { AxiosResponse } from 'axios';
+import CardMovies from './components/CardMovies';
 import './App.css';
 
 function App() {
+  const [movies, setMovies] = useState<IMovies[]>([]);
+
+  useEffect(() => {
+    axios
+      .get<IMovies[]>(
+        'https://api.themoviedb.org/3/movie/550?api_key=4f21ecda9ab04354f9529b5ef08b3cd6'
+      )
+      .then((res: AxiosResponse) => {
+        console.log('movies', res.data);
+        setMovies(res.data);
+      });
+  }, []);
+
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-      </header>
-      <Home movie_results={} />
+      Go to the Cinema !
+      <div>
+        {movies.length &&
+          movies.map((movie) => {
+            return (
+              <li>
+                <CardMovies movie={movie} />
+              </li>
+            );
+          })}
+      </div>
     </div>
   );
 }
