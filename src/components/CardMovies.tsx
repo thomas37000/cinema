@@ -1,4 +1,5 @@
 import { IMovies } from '../MovieInterface';
+import Img_Api from "./Img_Api";
 import './Card.css';
 
 const CardMovies = (props: { movie: IMovies }) => {
@@ -7,7 +8,7 @@ const CardMovies = (props: { movie: IMovies }) => {
   return (
     <div className='cardMovie'>
       <div className='cardImage'>
-        <img src={movie.poster_path} alt={movie.title} />
+      <img src={Img_Api + movie.backdrop_path} alt={movie.title} />
       </div>
       <h2>{movie.title}</h2>
       <p>{movie.overview}</p>

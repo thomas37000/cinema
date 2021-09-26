@@ -15,6 +15,7 @@
 // }
 
 export interface IMovies {
+  backdrop_path: string,
   id: number;
   original_language: string;
   original_title: string;
