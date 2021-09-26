@@ -1,36 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { IMovies } from '../MovieInterface';
-import axios, { AxiosResponse } from 'axios';
-import CardMovies from './CardMovies';
+import CardMovies from '../components/CardMovies';
+import { Api } from '../api/api';
+import '../App.css';
 
-const Home: React.FC<IMovies> = () => {
+function App() {
   const [movies, setMovies] = useState<IMovies[]>([]);
 
+  const { REACT_APP_API_KEY } = process.env;
+
+  const Api_key = REACT_APP_API_KEY;
+
   useEffect(() => {
-    axios
-      .get<IMovies[]>(
-        'https://api.themoviedb.org/3/movie/550?api_key=4f21ecda9ab04354f9529b5ef08b3cd6'
-      )
-      .then((res: AxiosResponse) => {
-        console.log('movies', res.data);
-        setMovies(res.data);
+    fetch(
+      `${Api}?api_key=${Api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('useEffect', data);
+        setMovies(data.results);
       });
   }, []);
 
-  return (
-    <div>
-      Go to the Cinema !
-      <div>
-        {movies.map((movie) => {
-          return (
-            <li>
-              <CardMovies movie={movie} />
-            </li>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
+  const fetchMovies =
+    movies.length > 0 &&
+    movies.map((movie, i) => {
+      return <CardMovies key={i} movie={movie} />;
+    });
 
-export default Home;
+  return (
+    <>
+      <div className='App'>{fetchMovies}</div>
+    </>
+  );
+}
+
+export default App;
