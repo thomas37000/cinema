@@ -1,5 +1,39 @@
+.allMovies {
+  display: inline-flex;
+}
+
 .cardMovie {
-  background: lightgray;
+  position: relative;
   width: 400px;
-  height: 500px;
+  height: 320px;
+  background: rgb(50, 55, 50);
+  background: linear-gradient(
+    45deg,
+    rgba(50, 55, 50, 1) 0%,
+    rgba(45, 58, 78, 1) 15%,
+    rgba(41, 117, 134, 1) 100%,
+    rgba(15, 208, 9, 1) 100%
+  );
+}
+
+.cardImg img {
+  width: 400px;
+}
+
+.title {
+  color: #f1f1f1;
+}
+
+.cardImg:hover {
+  background: gray;
+}
+
+.cardMovie:hover {
+  background: gray;
+  color: #f1f1f1;
+}
+
+.cardMovie:hover .title {
+  background: gray;
+  color: #f1f1f1;
 }
