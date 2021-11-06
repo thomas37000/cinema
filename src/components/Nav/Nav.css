@@ -1,6 +1,6 @@
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background: #000;
   height: 60px;
@@ -27,6 +27,6 @@
 .logo {
   width: 35px;
   height: 35px;
-  margin-top: 10px;
+  margin-bottom: -10px;
   border-radius: 50%;
 }

@@ -16,6 +16,7 @@ const CardMovies = (props: { movie: IMovies }) => {
             <img src={Img_Api + movie.backdrop_path} alt={movie.title} />
           </div>
           <h2 className='title'>{movie.title}</h2>
+          <h4>{movie.vote_average}</h4>
           {/* <p>{movie.overview}</p> */}
         </div>
       </div>
