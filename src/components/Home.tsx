@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IMovies } from '../MovieInterface';
-import CardMovies from '../components/CardMovies';
+import CardMovies from './Card/CardMovies';
 import { Api } from '../api/api';
 import '../App.css';
 

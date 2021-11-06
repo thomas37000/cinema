@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  height: 60px;
+}
+
+.nav li {
+  display: inline-block;
+  list-style: none;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 40px;
+}
+
+.nav li:hover {
+  background: #333;
+  transition: background 0.3s;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+  border-radius: 50%;
+}
