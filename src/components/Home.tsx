@@ -7,9 +7,9 @@ import '../App.css';
 function App() {
   const [movies, setMovies] = useState<IMovies[]>([]);
 
-  const { REACT_APP_API_KEY } = process.env;
+  // const { REACT_APP_API_KEY } = process.env;
 
-  const Api_key = REACT_APP_API_KEY;
+  const Api_key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     fetch(
