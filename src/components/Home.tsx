@@ -23,7 +23,7 @@ function App() {
   }, [Api_key]);
 
   const fetchMovies =
-    movies.length > 0 &&
+    movies &&
     movies.map((movie, i) => {
       return <CardMovies key={i} movie={movie} />;
     });
