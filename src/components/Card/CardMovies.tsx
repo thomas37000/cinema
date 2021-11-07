@@ -1,12 +1,12 @@
 import { IMovies } from '../../MovieInterface';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Img_Api from '../../api/Img_Api';
 import './Card.css';
 
 const CardMovies = (props: { movie: IMovies }) => {
   const { movie } = props;
 
-  type TParams = { id: string | undefined };
+  // type TParams = { id: string | undefined };
 
   return (
     // <Link to={`/movie/${id}`}>

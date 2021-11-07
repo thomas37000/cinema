@@ -5,7 +5,7 @@ import './Card.css';
 const CardMoviesById = (props: { movie: IMovies }) => {
   const { movie } = props;
 
-  type TParams = { id: string | undefined };
+  // type TParams = { id: string | undefined };
 
   return (
     <div className='allMovies'>

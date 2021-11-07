@@ -17,7 +17,7 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log('useEffect', data);
+        // console.log('useEffect', data);
         setMovies(data.results);
       });
   }, []);
