@@ -20,7 +20,7 @@ function App() {
         // console.log('useEffect', data);
         setMovies(data.results);
       });
-  }, []);
+  }, [Api_key]);
 
   const fetchMovies =
     movies.length > 0 &&
