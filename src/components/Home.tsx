@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `${Api}?api_key=${Api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+      `${Api}?api_key=4f21ecda9ab04354f9529b5ef08b3cd6&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
     )
       .then((res) => res.json())
       .then((data) => {
