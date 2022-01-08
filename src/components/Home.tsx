@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IMovies } from '../MovieInterface';
+import IMovies from '../interfaces/MovieInterface';
 import CardMovies from './Card/CardMovies';
 import { Api } from '../api/api';
 import '../App.css';

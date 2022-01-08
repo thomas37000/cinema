@@ -1,4 +1,4 @@
-import { IMovies } from '../../MovieInterface';
+import IMovies from '../../interfaces/MovieInterface';
 import Img_Api from '../../api/Img_Api';
 import './Card.css';
 

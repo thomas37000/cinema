@@ -1,4 +1,4 @@
-export interface IMovies {
+export default interface IMovies {
   backdrop_path: string,
   id: string | undefined;
   original_language: string;

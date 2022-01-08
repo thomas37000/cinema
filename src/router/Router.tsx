@@ -1,16 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import CardMoviesById from '../components/Card/CardMovieById';
-import Home from '../components/Home';
+import { BrowserRouter as Router, Switch, Route, RouteComponentProps } from 'react-router-dom';
 import Navbar from '../components/Nav/Nav';
+import routes from '../interfaces/routes';
 
 const Routter = () => {
   return (
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/movie/:id' component={CardMoviesById} />
+      {routes.map((route, index) => {
+                        return (
+                            <Route 
+                                key={index}
+                                path={route.path}
+                                exact={route.exact}
+                                render={(props: RouteComponentProps<any>) => (
+                                    <route.component
+                                        name={route.name} 
+                                        {...props}
+                                        {...route.props}
+                                    />
+                                )}
+                            />
+                        );
+                    })}
       </Switch>
     </Router>
   );
